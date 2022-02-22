@@ -1,0 +1,27 @@
+pragma solidity  ^0.8.0; 
+// SPDX-License-Identifier: MIT
+
+    contract SimpleStorage {
+//call data, memory, storage.
+// 1) store a string 
+    
+    string public text;
+//this contract will have 2 functions. 1) set text 2) get text.
+// this is a public state variable
+
+function set (string calldata _text) external {
+     text = _text;
+ }
+// set text
+                //underscore becasuse of conflict between input text and state variable text
+        // external means it can only be called from outside this contract
+//memory can be replaced with call data in the string...but uses more gas 
+
+   
+function get () external view returns (string memory) {
+    return text;
+}
+//writing the function to get the state variable 
+//view- inside it we are returning state variable text 
+
+}
