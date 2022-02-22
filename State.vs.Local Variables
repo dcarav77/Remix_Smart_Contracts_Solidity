@@ -1,0 +1,15 @@
+pragma solidity  ^0.8.0; 
+// SPDX-License-Identifier: MIT
+
+contract Statevariables {
+    uint public myUint; 
+    }
+//there are 3 types of variable local, state, and global variables
+//State variables are variables that store data on the blockchain
+//State variables are declared inside a contract but outside a function
+
+function foo() external {
+    uint notStateVariable = 456;
+    }   
+//variables declared inside a function are local variables 
+// exist only when the function is executing
