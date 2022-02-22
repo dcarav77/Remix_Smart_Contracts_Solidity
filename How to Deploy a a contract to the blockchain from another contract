@@ -2,16 +2,20 @@ pragma solidity  ^0.8.0;
 // SPDX-License-Identifier: MIT
 
 import "SimpleStorage.sol";
-
+// "SimpleStorage.sol is the old contract
 contract FactoryStorage {
 
     SimpleStorage[] public simpleStorageArray;
-
+// Array allows you to keep track of all the contracts w/out using etherscan
     function createSimpleContract() public {
+        
         SimpleStorage simpleStorage = new SimpleStorage();
+//Generate a contract of simplestorage type. Create an object of type "SimpleStorage". Name it LOWERcase simplestorage. This is NEW simple storage contract
         simpleStorageArray.push(simpleStorage); 
+//
     }
 }
 
-//How to Deploy a a contract to the blockchain from another contract 
-// "SimpleStorage.sol is the old contract
+//Conclusion- How to Deploy a a contract to the blockchain from another contract 
+
+// In Deployed contracts- Return value (address) = 3 = array w/ one element (0) at index '0'. Index '0' is the index of Return Value
