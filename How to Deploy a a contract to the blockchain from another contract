@@ -1,0 +1,17 @@
+pragma solidity  ^0.8.0; 
+// SPDX-License-Identifier: MIT
+
+import "SimpleStorage.sol";
+
+contract FactoryStorage {
+
+    SimpleStorage[] public simpleStorageArray;
+
+    function createSimpleContract() public {
+        SimpleStorage simpleStorage = new SimpleStorage();
+        simpleStorageArray.push(simpleStorage); 
+    }
+}
+
+//How to Deploy a a contract to the blockchain from another contract 
+// "SimpleStorage.sol is the old contract
