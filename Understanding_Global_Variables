@@ -1,0 +1,14 @@
+pragma solidity ^0.8.0; // SPDX-License-Identifier: MIT
+
+contract GlobalVariables {
+    function glbalVars () external view returns (address, uint, uint){
+        address sender = msg.sender;
+//.                     msg.sender = global var- stores address that calls the function  
+        uint timestamp = block.timestamp;
+//.     datatype=uint
+        uint blockNum = block.number;
+        return (sender, timestamp, blockNum);
+    }
+}
+
+//. w/out anything in the return function, nothing be added to deployed contracts 
