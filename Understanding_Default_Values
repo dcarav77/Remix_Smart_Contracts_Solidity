@@ -1,0 +1,14 @@
+pragma solidity ^0.8.0; // SPDX-License-Identifier: MIT
+
+contract DefaulValues {
+    bool public b; //default value bool is false
+    uint public u; //default value uint is zero
+    int public i; //defautlt int is zero
+    address public a; //default value for address is 0000000 address
+    bytes32 public b32; //0x000000000000 sixtyfourzeros
+}
+
+
+// state& local variables have a default value
+// if you do not assign a value, one will be assigned
+//
