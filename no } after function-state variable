@@ -1,0 +1,21 @@
+pragma solidity ^0.8.0; // SPDX-License-Identifier: MIT
+
+contract tonsofun { 
+    uint public i; 
+    bool public b; 
+    address public myAddress; 
+    
+///do not put a fucking } myAddress;
+function foo() external { 
+        uint x = 123; 
+        bool f = false;
+    
+        i = 2;
+        b = false;
+
+        x = 44;
+        f = true;
+        myAddress = address (1);
+    }
+
+}
