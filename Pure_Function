@@ -1,0 +1,11 @@
+contract pureSample {
+
+   //pure is specified
+   //this functions is only concerned about the variables and arithmetic in this function
+   
+   function getResult() public pure returns(uint sum){
+      uint a = 5; 
+      uint b = 7;
+      sum = a + b; 
+   }
+}
