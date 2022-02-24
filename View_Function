@@ -1,0 +1,10 @@
+contract viewSample {
+
+    //view is specified and function reads data from block chain
+    
+    function getBlock() public view returns (uint){
+        uint blocknumber = block.number;
+        return blocknumber;
+    }    
+}
+ 
