@@ -1,0 +1,35 @@
+pragma solidity  ^0.8.0; 
+// SPDX-License-Identifier: MIT
+
+import "SimpleStorage.sol";
+//ABI comes from import
+
+contract FactoryStorage {
+
+        SimpleStorage[] public simpleStorageArray;
+//.     two caps.              one cap 
+//address comes from here
+
+function createSimpleContract() public {
+        
+        SimpleStorage simpleStorage = new SimpleStorage();
+//         two caps.    one cap.              two caps
+        simpleStorageArray.push(simpleStorage); 
+//.        one cap                  one cap
+    }
+function fsStore (uint256 _simpleStorageIndex, uint256 _simpleStorageNumber) public {
+//.                          one cap.                      one cap 
+// when you interact w/ contract you need 1)address and 2) ABI
+        SimpleStorage simpleStorage = SimpleStorage (address (simpleStorageArray [_simpleStorageIndex]));
+//two caps         one cap         two caps
+        simpleStorage.store (_simpleStorageNumber);
+//onecap                    onecap
+}
+
+function fsGet (uint256 _simpleStorageIndex){
+
+}
+//Conclusion- Deploy Contract from another contract and call those functions
+// Interacting with Contract deployed Contract
+// I call the "store" and "retrieve functions from the old SimpleStorage contract
+}
