@@ -1,0 +1,32 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.6.0;
+
+import "@chainlink/contracts/src/v0.6/interfaces/AggregatorV3Interface.sol";
+
+contract FundMe {
+
+    mapping (address => uint256) public addressToAmountFunded;
+    
+function fund() public payable {
+    uint256 minimumUSD = 50 * 10 ** 18;
+        addressToAmountFunded[msg.sender] += msg.value;
+    ///msg.sender and msg.value both in every contract call and transaction 
+    //msg.sender is the sender and msg. value is how much they sent 
+}
+function getVersion () public view returns (uint256) {
+    AggregatorV3Interface _priceFeed = AggregatorV3Interface (0x9326BFA02ADD2366b30bacB125260Af641031331);
+        return _priceFeed.version();
+}
+function getPrice () public view returns (uint256) {
+    AggregatorV3Interface _priceFeed = AggregatorV3Interface (0x9326BFA02ADD2366b30bacB125260Af641031331);
+        (,int256 answer,,,) = _priceFeed.latestRoundData();
+            return uint256 (answer);     
+}
+function withdraw () payable public {
+    msg.sender.transfer(address(this).balance);
+//this means current contract //whoever called the withdraw function (msg.sender) transfer them the money
+}
+
+} 
+
+//using 0.6.12+ commit
